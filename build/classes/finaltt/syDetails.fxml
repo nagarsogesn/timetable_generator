@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.BottomNavigation?>
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="finaltt.finalTTController">
+    <stylesheets>
+        <URL value="@sydetails.css" />
+    </stylesheets>
+   <children>
+      <Label fx:id="label1" layoutX="286.0" layoutY="14.0" text="Label" />
+      <BottomNavigation layoutX="143.0" layoutY="340.0">
+          <fx:define>
+              <ToggleGroup fx:id="toggleGroup" />
+          </fx:define>
+          <actionItems>
+              <ToggleButton contentDisplay="TOP" selected="true" styleClass="bottom-nav-button" text="Recent">
+                  <graphic>
+                      <Icon content="RECENT_ACTORS" />
+                  </graphic>
+               <toggleGroup>
+                  <ToggleGroup fx:id="toggleGroup" />
+               </toggleGroup>
+              </ToggleButton>
+              <ToggleButton contentDisplay="TOP" styleClass="bottom-nav-button" text="Favourite">
+                  <graphic>
+                      <Icon content="FAVORITE" />
+                  </graphic>
+                  <toggleGroup>
+                      <fx:reference source="toggleGroup" />
+                  </toggleGroup>
+              </ToggleButton>
+              <ToggleButton contentDisplay="TOP" styleClass="bottom-nav-button" text="Nearby">
+                  <graphic>
+                      <Icon content="NEAR_ME" />
+                  </graphic>
+                  <toggleGroup>
+                      <fx:reference source="toggleGroup" />
+                  </toggleGroup>
+              </ToggleButton>
+          </actionItems>
+      </BottomNavigation>
+   </children>
+</AnchorPane>
